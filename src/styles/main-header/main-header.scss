@@ -1,3 +1,7 @@
+.main-header {
+  margin-bottom: 32px;
+}
+
 .main-header__wrap-top {
   width: calc(100% - 40px);
   margin: 0 auto;
@@ -62,6 +66,10 @@
 }
 
 @media(min-width: $desktop-width) {
+  .main-header {
+    margin-bottom: 31px;
+  }
+
   .main-header__wrap-top {
     width: calc(100% - 30px);
     margin-bottom: 37px;
@@ -88,7 +96,7 @@
       content: "";
       position: absolute;
       bottom: 100%;
-      left: 50px;
+      left: 80px;
 
       border: 6px solid transparent;
       border-bottom: 9px solid #ffffff;

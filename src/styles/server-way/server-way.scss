@@ -1,0 +1,58 @@
+.server-way {
+  margin-bottom: 50px;
+}
+
+.server-way__title {
+  @include consolasBold(20px, 36px);
+}
+
+.server-way blockquote {
+  position: relative;
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 54px;
+
+  @include segoeItalic(14px, 20px);
+
+  p {
+    margin: 0;
+    margin-bottom: 22px;
+  }
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    fill: #c7c7c7;
+  }
+  cite {
+    color: #777777;
+  }
+}
+
+@media(min-width: $desktop-width) {
+  .server-way {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    padding-top: 25px;
+    margin-bottom: 50px;
+    border-top: 1px solid #dadbdc;
+  }
+  
+  .server-way__title {
+    @include consolasReg(28px, 36px);
+  }
+  
+  .server-way blockquote {
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 65px;
+    
+    p {
+      margin-bottom: 24px;
+    }
+    cite {
+      font-size: 16px;
+    }
+  }
+}
