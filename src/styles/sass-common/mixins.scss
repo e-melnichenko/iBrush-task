@@ -1,8 +1,35 @@
-@mixin font($font-size, $line-height, $color: $text-main) {
-  font-family: "";
+@mixin consolasReg($font-size, $line-height, $color: $text-main) {
+  font-family: "Consolas", "Lucida Console", "Monaco", monospace;
   font-size: $font-size;
   line-height: $line-height;
   color: $color;
   font-weight: normal;
   font-style: normal;
+}
+
+@mixin consolasBold($font-size, $line-height, $color: $text-main) {
+  font-family: "Consolas", "Lucida Console", "Monaco", monospace;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin segoeReg($font-size, $line-height, $color: $text-main) {
+  font-family: "Segoe UI", "Trebuchet MS", "Helvetica", sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin segoeReg($font-size, $line-height, $color: $text-main) {
+  font-family: "Segoe UI", "Trebuchet MS", "Helvetica", sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: normal;
+  font-style: italic;
 }

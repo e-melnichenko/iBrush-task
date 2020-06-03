@@ -1,9 +1,39 @@
 @font-face {
-  font-family: "Oswald";
+  font-family: "Consolas";
   font-style: normal;
   font-weight: normal;
   src: 
-    url("./fonts/oswaldmedium.woff2") format("woff2"),
-    url("./fonts/oswaldmedium.woff") format("woff");
+    url("./fonts/Consolas-regular.woff2") format("woff2"),
+    url("./fonts/Consolas-regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Consolas";
+  font-style: normal;
+  font-weight: bold;
+  src: 
+    url("./fonts/Consolas-bold.woff2") format("woff2"),
+    url("./fonts/Consolas-bold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    url("./fonts/SegoeUI-regular.woff2") format("woff2"),
+    url("./fonts/SegoeUI-regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: italic;
+  font-weight: normal;
+  src: 
+    url("./fonts/SegoeUI-italic.woff2") format("woff2"),
+    url("./fonts/SegoeUI-italic.woff") format("woff");
   font-display: swap;
 }
