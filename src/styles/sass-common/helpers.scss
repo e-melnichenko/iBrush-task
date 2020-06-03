@@ -20,7 +20,7 @@
 }
 
 .container {
-  padding: 0 25px;
+  padding: 0 20px;
 }
 
 .shim-container {
@@ -53,11 +53,9 @@
   transition: transform 0.5s;
 }
 
-
-
-@media(min-width: $tablet-width) {
+@media(min-width: $desktop-width) {
   .container {
-    padding: 0 40px;
+    padding: 0 15px;
   }
   .modal-outter-wrap {
     align-items: center;
@@ -66,13 +64,6 @@
     // Также появляется горизонтальная прокрутка. Модальные окна большего размера будут уменьшатся.
     // Удалить, если такое поведение не нужно. Если не нужно поддерживать ie, то использовать fit-content
     // min-width: 860px; 
-  }
-}
-
-@media(min-width: $desktop-width) {
-  .container {
-    width: 1320px;
-    padding: 0 60px;
   }
 }
 

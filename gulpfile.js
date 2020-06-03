@@ -17,9 +17,17 @@ const imagemin = require('gulp-imagemin');
 const isDevelopment = !process.env.NODE_ENV || !process.env.NODE_ENV === 'production';
 
 gulp.task('styles', function() {
-  const manifestPath = './manifest/assets-styles.json';
+  const manifestPath = './manifest/css-images.json';
 
   function resolver(url, _, done) {
+    // шрифты копируются отдельно чтобы избежать большой вложенности. Можно менять на свой вкус - главное не забыть поправить copy:fonts 
+    if(path.basename(url) === 'fonts.scss') {
+      done({
+        file: url
+      })
+
+      return
+    }
     const filePath = path.join(path.dirname(_), url);
     const content = fs.readFileSync(filePath).toString();
     // находим   и заменяем url изображения
@@ -58,14 +66,14 @@ gulp.task('styles', function() {
   ).on('error', $.notify.onError({ title: 'styles' }))
 });
 
-gulp.task('styles:assets', function() {
+gulp.task('styles:images', function() {
   return combine(
-    gulp.src('src/styles/**/*.{png,jpg,jpeg,svg}', {since: gulp.lastRun('styles:assets')}),
+    gulp.src('src/styles/**/*.{png,jpg,jpeg,svg}', {since: gulp.lastRun('styles:images')}),
     $.newer('public/styles'),
     $.if(!isDevelopment, $.rev()),
     gulp.dest('public/styles'),
     $.if(!isDevelopment, combine(
-      $.rev.manifest('assets-styles.json'),
+      $.rev.manifest('css-images.json'),
       gulp.dest('manifest')
     ))
   ).on('error', $.notify.onError({ title: 'styles:assets' }))
@@ -211,7 +219,7 @@ gulp.task('pixel-glass', function() {
 });
 
 gulp.task('build', gulp.series(
-  gulp.parallel(gulp.series('styles:assets', 'styles'), 'webpack', 'assets:images', 'copy:js', 'copy:fonts'),
+  gulp.parallel(gulp.series('styles:images', 'styles'), 'webpack', 'assets:images', 'copy:js', 'copy:fonts'),
   'html'
 ));
 

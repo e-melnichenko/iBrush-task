@@ -1,0 +1,19 @@
+@media(max-width: $desktop-width - 1px) {
+  body, html {
+    ::-webkit-scrollbar {
+      height: 4px;
+      border-radius: 2px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: $color-main;
+    }
+    
+    ::-webkit-scrollbar-track {
+      margin: 0 20px;
+      border-radius: 5px;
+      background-color: #e6e6e6;
+    }
+  }
+}

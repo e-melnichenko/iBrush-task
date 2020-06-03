@@ -15,26 +15,34 @@
     /* Mobile layout by default */
     background-image: url( "pixel-glass/preview/mobile.jpg" );
   }
-  /* Tablet */
-  @media ( min-width: 760px ) {
-    HTML {
-      /* Tablet layout */
-      background-image: url( "pixel-glass/preview/tablet.jpg" );
-    }
-  }
   /* Desktop */
-  @media ( min-width: 960px ) {
+  @media ( min-width: 768px ) {
     HTML {
       /* Desktop layout */
       background-image: url( "pixel-glass/preview/desktop.jpg" );
     }
   }
+
 </style> 
 <link href="./pixel-glass/styles.css" rel="stylesheet">
 <script src="./pixel-glass/script.js"></script>
 <!-- // Pixel Glass -->
 </head>
+<!-- asdf -->
 <body>
+  <header class="main-header">
+    <div class="main-header__wrap-top">
+      <h1 class="main-header__title">Путь JavaScript</h1>
+    </div>
+    <div class="main-header__wrap-image">
+      <p class="main-header__description">Можно выделить три основных направления для прогресса JavaScript <span class="typo">Middleюю</span></p>
+      <div class="main-header__wrap-date">
+        <p class="main-header__day">12</p>
+        <p class="main-header__month">апреля</p>
+      </div>
+      <img class="main-header__image" src="./img/books.jpg" alt="Книги по JavaScript" width="738" height="300">
+    </div>
+  </header>
   <script src="./js/ie/svg4everybody.js"></script>
 </body>
 </html>

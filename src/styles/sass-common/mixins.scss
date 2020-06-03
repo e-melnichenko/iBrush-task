@@ -1,4 +1,4 @@
-@mixin consolasReg($font-size, $line-height, $color: $text-main) {
+@mixin consolasReg($font-size, $line-height, $color: $text-color-main) {
   font-family: "Consolas", "Lucida Console", "Monaco", monospace;
   font-size: $font-size;
   line-height: $line-height;
@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-@mixin consolasBold($font-size, $line-height, $color: $text-main) {
+@mixin consolasBold($font-size, $line-height, $color: $text-color-main) {
   font-family: "Consolas", "Lucida Console", "Monaco", monospace;
   font-size: $font-size;
   line-height: $line-height;
@@ -16,7 +16,7 @@
   font-style: normal;
 }
 
-@mixin segoeReg($font-size, $line-height, $color: $text-main) {
+@mixin segoeReg($font-size, $line-height, $color: $text-color-main) {
   font-family: "Segoe UI", "Trebuchet MS", "Helvetica", sans-serif;
   font-size: $font-size;
   line-height: $line-height;
@@ -25,11 +25,20 @@
   font-style: normal;
 }
 
-@mixin segoeReg($font-size, $line-height, $color: $text-main) {
+@mixin segoeReg($font-size, $line-height, $color: $text-color-main) {
   font-family: "Segoe UI", "Trebuchet MS", "Helvetica", sans-serif;
   font-size: $font-size;
   line-height: $line-height;
   color: $color;
   font-weight: normal;
   font-style: italic;
+}
+
+@mixin merriwReg($font-size, $line-height, $color: $text-color-main) {
+  font-family: "Merriweather", "Georgia", serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  font-weight: normal;
+  font-style: normal;
 }

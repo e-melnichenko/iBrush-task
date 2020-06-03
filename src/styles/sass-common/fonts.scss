@@ -1,4 +1,6 @@
-// На windows эти шрифты есть, на macOS/Linux - нет  
+// Arial - безопасный шрифт, его подключать не нужно.
+
+// На windows эти шрифты есть, на macOS/Linux - нет.  
 @font-face {
   font-family: "Consolas";
   font-style: normal;
@@ -38,3 +40,16 @@
     url("./fonts/SegoeUI-italic.woff") format("woff");
   font-display: swap;
 }
+
+// нигде нет
+
+@font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    url("./fonts/Merriweather-regular.woff2") format("woff2"),
+    url("./fonts/Merriweather-regular.woff") format("woff");
+  font-display: swap;
+}
+
