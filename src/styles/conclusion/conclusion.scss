@@ -1,0 +1,35 @@
+.conclusion {
+  padding-top: 12px;
+  padding-bottom: 20px;
+}
+
+.conclusion__title {
+  margin-bottom: 15px;
+
+  @include consolasBold(21px, 36px);
+}
+
+.conclusion__text {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: $text-color-main;
+}
+
+
+@media(min-width: $desktop-width) {
+  .conclusion {
+    padding-top: 28px;
+    padding-bottom: 50px;
+  }
+  
+  .conclusion__title {
+    margin-bottom: 25px;
+    @include consolasReg(28px, 36px);
+  }
+  
+  .conclusion__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
