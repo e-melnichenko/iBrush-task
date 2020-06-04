@@ -1,5 +1,7 @@
 .server-way {
-  margin-bottom: 50px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  margin-bottom: 54px;
 }
 
 .server-way__title {
@@ -33,9 +35,9 @@
 @media(min-width: $desktop-width) {
   .server-way {
     width: calc(100% - 30px);
-    margin: 0 auto;
+    // margin: 0 auto;
     padding-top: 25px;
-    margin-bottom: 50px;
+    // margin-bottom: 52px;
     border-top: 1px solid #dadbdc;
   }
   

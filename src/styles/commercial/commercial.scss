@@ -1,0 +1,34 @@
+.commercial {
+  display: flex;
+  justify-content: center;
+
+  background-color: #ededed;
+}
+
+.commercial__wrap {
+  padding-top: 4px;
+}
+
+.commercial p {
+  margin-bottom: 17px;
+  @include segoeReg(14px, 18px);
+}
+
+.commercial a {
+  color: $color-main;
+
+  text-decoration: none;
+  border-bottom: 1px solid $color-main;
+  padding-bottom: 2px;
+}
+
+@media(min-width: $desktop-width) {
+  .commercial__wrap {
+    padding-top: 16px;
+    padding-bottom: 35px;
+  }
+
+  .commercial__wrap img{
+    width: 610px;
+  }
+}
