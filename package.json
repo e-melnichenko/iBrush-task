@@ -9,7 +9,7 @@
   },
   "browserslist": [
     "last 2 versions",
-    "IE 11",
+    "ie 11",
     "Firefox ESR"
   ],
   "keywords": [],
@@ -43,5 +43,8 @@
     "stream-combiner2": "^1.1.1",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.10.1"
   }
 }

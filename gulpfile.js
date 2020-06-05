@@ -58,6 +58,7 @@ gulp.task('styles', function() {
       $.postcss([autoprefixer(), cssnano()]),
       $.rev()
     )),
+    $.postcss([autoprefixer()]),
     gulp.dest('public/styles'),
     $.if(!isDevelopment, combine(
       $.rev.manifest('styles.json'),
@@ -121,7 +122,18 @@ gulp.task('webpack', function(callback) {
       filename: isDevelopment ? '[name].js' : '[name]-[hash:10].js',
     },
     module: {
-      rules: []
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            }
+          }
+        }
+      ]
     },
     plugins: []
   }
@@ -131,16 +143,7 @@ gulp.task('webpack', function(callback) {
       fileName: 'webpack.json',
     }))
 
-    options.module.rules.push({
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-        }
-      }
-    })
+    options.module.rules.push()
 
   }
 
