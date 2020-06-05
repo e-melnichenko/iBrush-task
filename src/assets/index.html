@@ -30,18 +30,22 @@
 </head>
 <!-- asdf -->
 <body>
-  <header class="main-header">
+  <header class="main-header custom-scrollbar">
     <div class="main-header__wrap-top">
       <h1 class="main-header__title">Путь JavaScript</h1>
     </div>
-    <div class="main-header__wrap-image">
+    
+    <div class="main-header__wrap-bottom">
       <p class="main-header__description">Можно выделить три основных направления для прогресса JavaScript <span class="typo">Middleюю</span></p>
       <div class="main-header__wrap-date">
         <p class="main-header__day">12</p>
         <p class="main-header__month">апреля</p>
       </div>
-      <img class="main-header__image" src="./img/books.jpg" alt="Книги по JavaScript" width="738" height="300">
+      <div class="main-header__wrap-image">
+        <img class="main-header__image" src="./img/books.jpg" alt="Книги по JavaScript" width="738" height="300">
+      </div>
     </div>
+  
   </header>
   <main>
     <section class="server-way">
@@ -54,7 +58,7 @@
         <cite>— Р. Мартин</cite>
       </blockquote>
     </section>
-    <section class="container commercial">
+    <section class="commercial">
       <div class="commercial__wrap">
         <h2 class="visually-hidden">Реклама</h2>
         <p>Реклама на&nbsp;<a href="https://www.blabla.com">blabla.com</a></p>
@@ -69,86 +73,79 @@
       <p class="conclusion__text">Синхрония осознаёт сюжетный верлибр. Мифопорождающее текстовое устройство диссонирует лирический субъект. Абстрактное высказывание пространственно просветляет деструктивный символ. Ямб, несмотря на то, что все эти характерологические черты отсылают не к единому образу нарратора, интегрирует мифопоэтический хронотоп. Действительно, ударение приводит палимпсест. Контрапункт приводит ритм.
       </p>
     </section>
-    <section class="container feedback">
-      <h2 class="visually-hidden">Обратная связь</h2>
-      <form action="" class="feedback__form">
-        <fieldset class="feedback__rating">
-          <legend>Оцените статью</legend>
-          <div class="feedback__wrap-rating">
-            <input type="radio" name="rating" id="rating-5" class="visually-hidden">
-            <label for="rating-5">
-              <svg width="24" height="23">
-                <use xlink:href="img/sprite.svg#star"></use>
-              </svg>
-            </label>
-
-            <input type="radio" name="rating" id="rating-4" class="visually-hidden">
-            <label for="rating-4">
-              <svg width="24" height="23">
-                <use xlink:href="img/sprite.svg#star"></use>
-              </svg>
-            </label>
-          
-            <input type="radio" name="rating" id="rating-3" class="visually-hidden">
-            <label for="rating-3">
-              <svg width="24" height="23">
-                <use xlink:href="img/sprite.svg#star"></use>
-              </svg>
-            </label>
-          
-            <input type="radio" name="rating" id="rating-2" class="visually-hidden">
-            <label for="rating-2">
-              <svg width="24" height="23">
-                <use xlink:href="img/sprite.svg#star"></use>
-              </svg>
-            </label>
-          
-            <input type="radio" name="rating" id="rating-1" class="visually-hidden">
-            <label for="rating-1">
-              <svg width="24" height="23">
-                <use xlink:href="img/sprite.svg#star"></use>
-              </svg>
-            </label>
-          </div>
-        </fieldset>
-
-        <fieldset class=feedback__comment>
-          <legend>Добавить комментарий к книге</legend>
-          <div class="feedback__wrap">
-            <div class="feedback__wrap-input">
-              <input type="text" name="name" id="name" placeholder=" ">
-              <label for="name">Имя</label>
+    <section class="feedback">
+      <div class="container">
+        <h2 class="visually-hidden">Обратная связь</h2>
+        <form action="" class="feedback__form">
+          <fieldset class="feedback__rating">
+            <legend>Оцените статью</legend>
+            <div class="feedback__wrap-rating">
+              <input type="radio" name="rating" id="rating-5" class="visually-hidden">
+              <label for="rating-5">
+                <svg width="24" height="23">
+                  <use xlink:href="img/sprite.svg#star"></use>
+                </svg>
+              </label>
+  
+              <input type="radio" name="rating" id="rating-4" class="visually-hidden">
+              <label for="rating-4">
+                <svg width="24" height="23">
+                  <use xlink:href="img/sprite.svg#star"></use>
+                </svg>
+              </label>
+            
+              <input type="radio" name="rating" id="rating-3" class="visually-hidden">
+              <label for="rating-3">
+                <svg width="24" height="23">
+                  <use xlink:href="img/sprite.svg#star"></use>
+                </svg>
+              </label>
+            
+              <input type="radio" name="rating" id="rating-2" class="visually-hidden">
+              <label for="rating-2">
+                <svg width="24" height="23">
+                  <use xlink:href="img/sprite.svg#star"></use>
+                </svg>
+              </label>
+            
+              <input type="radio" name="rating" id="rating-1" class="visually-hidden">
+              <label for="rating-1">
+                <svg width="24" height="23">
+                  <use xlink:href="img/sprite.svg#star"></use>
+                </svg>
+              </label>
+            </div>
+          </fieldset>
+  
+          <fieldset class=feedback__comment>
+            <legend>Добавить комментарий к книге</legend>
+            <div class="feedback__wrap">
+              <div class="feedback__wrap-input">
+                <input type="text" name="name" id="name" placeholder=" ">
+                <label for="name">Имя</label>
+              </div>
+              <div class="feedback__wrap-input">
+                <input type="email" name="email" id="email" placeholder=" ">
+                <label for="name">E-mail</label>
+              </div>
+              <div class="feedback__wrap-input select">
+                <label for="book">Выберите книгу</label>
+                <select name="book" data-default="Выберите книгу">
+                  <option value="JavaScript ниндзя">JavaScript ниндзя</option>
+                  <option value="Pragmatic Guide to JavaScript">Pragmatic Guide to JavaScript</option>
+                  <option value="Pro JavaScript Techniques">Pro JavaScript Techniques</option>
+                  <option value="Выразительный JavaScript">Выразительный JavaScript</option>
+                </select>
+              </div>
             </div>
             <div class="feedback__wrap-input">
-              <input type="email" name="email" id="email" placeholder=" ">
-              <label for="name">E-mail</label>
+              <textarea name="comment" id="comment" rows="6" placeholder=" "></textarea>
+              <label for="comment">Ваш отзыв</label>
             </div>
-            <div class="feedback__wrap-input select">
-              <!-- <div class="select__selected">
-                <span>Выберите книгу</span>
-              </div> 
-              <ul class="list-unstyled select__list">
-                <li class="select__item">JavaScript ниндзя</li>
-                <li class="select__item">Pragmatic Guide to JavaScript</li>
-                <li class="select__item">Pro JavaScript Techniques</li>
-                <li class="select__item">Выразительный JavaScript</li>
-              </ul> -->
-              <label for="book">Выберите книгу</label>
-              <select name="book" data-default="Выберите книгу">
-                <option value="JavaScript ниндзя">JavaScript ниндзя</option>
-                <option value="Pragmatic Guide to JavaScript">Pragmatic Guide to JavaScript</option>
-                <option value="Pro JavaScript Techniques">Pro JavaScript Techniques</option>
-                <option value="Выразительный JavaScript">Выразительный JavaScript</option>
-              </select>
-            </div>
-          </div>
-          <div class="feedback__wrap-input">
-            <textarea name="comment" id="comment" rows="6" placeholder=" "></textarea>
-            <label for="comment">Ваш отзыв</label>
-          </div>
-        </fieldset>
-        <button class="button" type="submit">Отправить</button>
-      </form>
+          </fieldset>
+          <button class="button" type="submit">Отправить</button>
+        </form>
+      </div>
     </section>
     <section class="container similar-posts">
       <h2 class="similar-posts__title">Похожие посты</h2>

@@ -23,38 +23,10 @@
   padding: 0 20px;
 }
 
-.shim-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  background-color: rgba(0, 0, 0, 0.6);
-
-  transform: translateY(-100%);
-  overflow: auto;
-  
-  &--active {
-    transform: none;
-
-    .modal-outter-wrap {
-      transform: none;
-    }
-  }
-}
-
-.modal-outter-wrap {
-  display: flex;
-  min-height: 100%;
-  width: 100%;      
-
-  transform: translateY(-100%);
-  transition: transform 0.5s;
-}
-
 @media(min-width: $desktop-width) {
   .container {
+    width: 738px;
+    margin: 0 auto;
     padding: 0 15px;
   }
   .modal-outter-wrap {

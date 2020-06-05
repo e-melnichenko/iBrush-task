@@ -26,6 +26,7 @@
 .main-header__description {
   margin-top: 15px;
   margin-bottom: 25px;
+  padding: 0 20px;
 
   text-align: left;
   font-family: "Arial", sans-serif;
@@ -35,12 +36,12 @@
 }
 
 .main-header__wrap-image {
-  padding: 0 20px;
   overflow: auto;
 }
 
 .main-header__image {
   margin-bottom: 13px;
+  padding: 0 20px;
 }
 
 .main-header__wrap-date {
@@ -90,6 +91,8 @@
     position: relative;
     order: 2;
     margin-top: 0;
+    padding: 0;
+    // padding: 0 15px;
     padding-top: 16px;
 
     &::before {
@@ -108,18 +111,23 @@
     }
   }
   
-  .main-header__wrap-image {
+  .main-header__wrap-bottom {
+    position: relative;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     padding: 0 15px;
+    width: 738px;
   }
   
   .main-header__image {
     margin-bottom: 0;
+    padding: 0;
   }
   
   .main-header__wrap-date {
     left: 35px; 
+    // top: 20px;
   }
   
   .main-header__day {

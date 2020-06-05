@@ -1,7 +1,8 @@
 @media(max-width: $desktop-width - 1px) {
-  body, html {
+  .custom-scrollbar {
     ::-webkit-scrollbar {
       height: 4px;
+      width: 4px;
       border-radius: 2px;
     }
     
@@ -12,7 +13,7 @@
     
     ::-webkit-scrollbar-track {
       margin: 0 20px;
-      border-radius: 5px;
+      border-radius: 2px;
       background-color: #e6e6e6;
     }
   }
