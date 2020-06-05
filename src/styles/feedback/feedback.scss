@@ -1,0 +1,161 @@
+.feedback {
+  padding-top: 37px;
+  padding-bottom: 40px;
+  background-color: #ededed;
+}
+
+.feedback__form  {
+  legend {
+    margin-bottom: 10px;
+    padding: 0;
+
+    @include consolasBold(16px, 18px, #202326);
+  }
+}
+
+.feedback__rating {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+
+  border: none;
+
+  label {
+    cursor: pointer;
+    
+    // порядок обратный, поэтому first
+    &:not(:first-of-type) {
+      padding-right: 10px;
+    }
+  }
+
+  svg {
+    stroke: #d8d8d8;
+    fill: transparent;
+  }
+
+  label:hover,
+  label:hover ~ label {
+    svg {
+      stroke: none;
+      fill: #ffb400;
+      transform: scale(1.2);
+      transition: transform .2s;
+    }
+  }
+}
+
+.feedback__wrap-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 160px;
+
+  &:not(:hover) input:checked + label,
+  &:not(:hover) input:checked ~ label {
+    svg {
+      stroke: none;
+      fill: #ffb400;
+    }
+  }
+}
+
+.feedback__wrap-input{
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+.feedback__comment > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.feedback__comment {
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  border: none;
+
+  legend {
+    margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 20px;
+    padding-bottom: 6px;
+    box-sizing: border-box;
+
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      border-color: #000000;
+      outline: none;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+
+    
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #777777;
+
+    transition: top .1s;
+    pointer-events: none;
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label,
+  textarea:focus + label,
+  textarea:not(:placeholder-shown) + label {
+    top: 5px;
+  } 
+}
+
+@media(min-width: $desktop-width) {
+  .feedback {
+    padding-top: 45px;
+    // padding-bottom: 40px;
+  }
+  
+  .feedback__form  {
+    legend {
+      font-size: 18px;
+    }
+  }
+  
+  .feedback__rating {
+    margin-bottom: 35px;
+  }
+
+  .feedback__wrap {
+    display: flex;
+    justify-content: space-between;
+
+    .feedback__wrap-input {
+      width: 226px;
+    }
+  }
+  
+  .feedback__comment {
+    margin-bottom: 15px;
+
+    textarea {
+      height: 100px;
+    }
+  }
+}

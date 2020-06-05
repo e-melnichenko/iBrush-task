@@ -121,18 +121,7 @@ gulp.task('webpack', function(callback) {
       filename: isDevelopment ? '[name].js' : '[name]-[hash:10].js',
     },
     module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            }
-          }
-        }
-      ]
+      rules: []
     },
     plugins: []
   }
@@ -141,6 +130,18 @@ gulp.task('webpack', function(callback) {
     options.plugins.push(new ManifestPlugin({
       fileName: 'webpack.json',
     }))
+
+    options.module.rules.push({
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        }
+      }
+    })
+
   }
 
   return combine(

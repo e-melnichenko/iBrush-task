@@ -1,0 +1,21 @@
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 13px 20px;
+  box-sizing: border-box;
+
+  @include consolasBold(18px, 18px, #ffffff);
+  text-transform: uppercase; 
+
+  background-color: $color-main;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+@media(min-width: $desktop-width) {
+  .button {
+    width: 226px;
+  }
+}
