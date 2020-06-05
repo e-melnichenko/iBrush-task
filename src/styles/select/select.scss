@@ -49,7 +49,7 @@
     height: 2px;
 
     background-color: #818181;
-    transition: transform .5s;
+    transition: transform 0.5s;
   }
 
   &::after {
@@ -67,7 +67,7 @@
     left: 20px;
     
     pointer-events: none;
-    
+
     // чтобы не залезал на стрелочку
     max-width: calc(100% - 50px);
     overflow: hidden; 

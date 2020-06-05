@@ -150,6 +150,49 @@
         <button class="button" type="submit">Отправить</button>
       </form>
     </section>
+    <section class="container similar-posts">
+      <h2 class="similar-posts__title">Похожие посты</h2>
+      <div class="similar-posts__slider">
+        <ul class="list-unstyled similar-posts__list" id="post-slider">
+          <li class="similar-posts__item">
+            <a href="#">
+              <img class="similar-posts__image" src="./img/post-react-lifecycle.jpg" alt="События жизненного цикла ReactJS" width="226" height="226">
+              <h3 class="similar-posts__post-name">События жизненного цикла ReactJS</h3>
+            </a>
+          </li>
+          <li class="similar-posts__item">
+            <a href="#">
+              <img class="similar-posts__image" src="./img/post-css-grids.jpg" alt="CSS Grids. Полное руководство" width="226" height="226">
+              <h3 class="similar-posts__post-name">CSS Grids. Полное руководство</h3>
+            </a>
+          </li>
+          <li class="similar-posts__item">
+            <a href="#">
+              <img class="similar-posts__image" src="./img/post-async-js.jpg" alt="Асинхронность в JavaScript" width="226" height="226">
+              <h3 class="similar-posts__post-name">Асинхронность в JavaScript</h3>
+            </a>
+          </li>
+        </ul>
+        <ul class="list-unstyled similar-posts__toggle-list">
+          <li  class="similar-posts__toggle similar-posts__toggle--active" data-slider-toggle data-value="1" data-target="post-slider">
+            <button>
+              <span class="visually-hidden">Первый пост</span>
+            </button>
+          </li>
+          <li class="similar-posts__toggle" data-slider-toggle data-value="2" data-target="post-slider">
+            <button>
+              <span class="visually-hidden">Второй пост</span>
+            </button>
+          </li>
+          <li class="similar-posts__toggle" data-slider-toggle data-value="3" data-target="post-slider">
+            <button>
+              <span class="visually-hidden">Третий пост</span>
+            </button>
+          </li>
+          
+        </ul>
+      </div>
+    </section>
   </main>
   <script src="./js/ie/svg4everybody.js"></script>
 </body>
