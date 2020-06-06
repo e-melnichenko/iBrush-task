@@ -8,9 +8,7 @@
     "start": "gulp dev"
   },
   "browserslist": [
-    "last 2 versions",
-    "ie 11",
-    "Firefox ESR"
+    "> 0.5%"
   ],
   "keywords": [],
   "author": "",
@@ -45,6 +43,6 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.10.1"
+    "core-js": "^3.6.5"
   }
 }

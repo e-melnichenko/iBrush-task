@@ -7,7 +7,9 @@ document.addEventListener('click', function(ev) {
   const slideList = document.getElementById(target.getAttribute('data-target'));
   const slideNum = +target.dataset.value;
   const slidesCount = slideList.children.length;
-  slideList.style = `transform: translateX(-${(slideNum - 1) * 100 / slidesCount}%);`;
+  slideList.setAttribute('style', `
+  transform: translateX(-${(slideNum - 1) * 100 / slidesCount}%);
+  `);
 
   // смена активного элемента
   // подразумевается что кнопки всегда в одноуровневом списке

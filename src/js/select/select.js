@@ -11,11 +11,11 @@ function customizeSelect() {
 
 function appendCustomSelect(container) {
   const select = container.querySelector('select');
-  select.style = 'display: none';
+  select.setAttribute('style', 'display: none');
 
   container.insertAdjacentHTML('afterbegin', `
     <div class="select__selected" tabindex="0">
-      <span>${select.selectedOptions[0].innerHTML}</span>
+      <span>${select.value}</span>
     </div>
     <ul class="list-unstyled select__list">
       ${Array.from(select.children).map(opt => (
@@ -28,13 +28,13 @@ function appendCustomSelect(container) {
 
 function addListeners() {
   // open/close 
-  document.body.addEventListener('click', toggleList);
-  document.body.addEventListener('keydown', toggleList);
+  document.addEventListener('click', toggleList);
+  document.addEventListener('keydown', toggleList);
 
   function toggleList(ev) {
     const target = ev.target.closest('.select__selected');
     if(!target) return;
-
+    console.log(ev);
     if(ev.type === 'keydown' && !(
       ev.code === 'Enter' ||
       ev.code === 'Space'
@@ -44,11 +44,12 @@ function addListeners() {
 
     const container = target.closest('.select');
     container.classList.toggle('select--active');
-    target.nextElementSibling.children[0].focus();
+
+    ev.type === "keydown" && target.nextElementSibling.children[0].focus();
   };
 
   // keyboard navigate
-  document.body.addEventListener('keydown', function(ev) {
+  document.addEventListener('keydown', function(ev) {
     const target = ev.target.closest('.select__list');
     if(!target) return;
 
@@ -80,8 +81,8 @@ function addListeners() {
   });
 
   // list-item choose
-  document.body.addEventListener('click', chooseItem);
-  document.body.addEventListener('keydown', chooseItem);
+  document.addEventListener('click', chooseItem);
+  document.addEventListener('keydown', chooseItem);
 
   function chooseItem(ev) {
     const target = ev.target.closest('.select__item'); 
@@ -111,7 +112,7 @@ function addListeners() {
   };
 
   //outside click
-  document.body.addEventListener('click', function(ev) {
+  document.addEventListener('click', function(ev) {
     const target = ev.target.closest('.select'); 
     if(target) return;
 

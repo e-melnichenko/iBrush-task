@@ -25,7 +25,6 @@
 </style> 
 <link href="./pixel-glass/styles.css" rel="stylesheet">
 <script src="./pixel-glass/script.js"></script>
-<script src="./js/ie/svg4everybody.js" async></script>
 <!-- // Pixel Glass -->
 </head>
 <!-- asdf -->
@@ -42,7 +41,10 @@
         <p class="main-header__month">апреля</p>
       </div>
       <div class="main-header__wrap-image">
-        <img class="main-header__image" src="./img/books.jpg" alt="Книги по JavaScript" width="738" height="300">
+        <picture>
+          <source srcset="./img/books.webp" type="image/webp">
+          <img class="main-header__image" src="./img/books.jpg" alt="Книги по JavaScript" width="738" height="300">
+        </picture>
       </div>
     </div>
   
@@ -63,6 +65,9 @@
         <h2 class="visually-hidden">Реклама</h2>
         <p>Реклама на&nbsp;<a href="https://www.blabla.com">blabla.com</a></p>
         <picture>
+          <source media="(min-width: 768px)" srcset="./img/books-on-table-mobile.webp" type="image/webp">
+          <source srcset="./img/books-on-table-mobile.webp" type="image/webp">
+
           <source media="(min-width: 768px)" srcset="./img/books-on-table-desktop.jpg">
           <img src="./img/books-on-table-mobile.jpg" alt="Кнниги на столе" width="280" height="200">
         </picture>
@@ -158,19 +163,28 @@
         <ul class="list-unstyled similar-posts__list" id="post-slider">
           <li class="similar-posts__item">
             <a href="#">
-              <img class="similar-posts__image" src="./img/post-react-lifecycle.jpg" alt="События жизненного цикла ReactJS" width="226" height="226">
+              <picture>
+                <source srcset="./img/post-react-lifecycle.webp" type="image/webp">
+                <img class="similar-posts__image" src="./img/post-react-lifecycle.jpg" alt="События жизненного цикла ReactJS" width="226" height="226">
+              </picture>
               <h3 class="similar-posts__post-name">События жизненного цикла ReactJS</h3>
             </a>
           </li>
           <li class="similar-posts__item">
             <a href="#">
-              <img class="similar-posts__image" src="./img/post-css-grids.jpg" alt="CSS Grids. Полное руководство" width="226" height="226">
+              <picture>
+                <source srcset="./img/post-css-grids.webp" type="image/webp">
+                <img class="similar-posts__image" src="./img/post-css-grids.jpg" alt="CSS Grids. Полное руководство" width="226" height="226">
+              </picture>
               <h3 class="similar-posts__post-name">CSS Grids. Полное руководство</h3>
             </a>
           </li>
           <li class="similar-posts__item">
             <a href="#">
-              <img class="similar-posts__image" src="./img/post-async-js.jpg" alt="Асинхронность в JavaScript" width="226" height="226">
+              <picture>
+                <source srcset="./img/post-async-js.webp" type="image/webp">
+                <img class="similar-posts__image" src="./img/post-async-js.jpg" alt="Асинхронность в JavaScript" width="226" height="226">
+              </picture>
               <h3 class="similar-posts__post-name">Асинхронность в JavaScript</h3>
             </a>
           </li>
@@ -196,6 +210,7 @@
       </div>
     </section>
   </main>
-  
+  <script src="https://jonneal.dev/svg4everybody/svg4everybody.min.js"></script>
+  <script>svg4everybody();</script>
 </body>
 </html>
