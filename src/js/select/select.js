@@ -1,27 +1,94 @@
 function customizeSelect() {
   const containers = document.querySelectorAll('.select');
-  if(containers.length === 0) return
+  if(containers.length === 0) return  // prevent adding listeners
   
   for (let container of containers) {
     appendCustomSelect(container)
-  }
+  };
 
-  // listeners
+  addListeners();
+} 
 
-  // open/close click
-  document.body.addEventListener('click', function(ev) {
+function appendCustomSelect(container) {
+  const select = container.querySelector('select');
+  select.style = 'display: none';
+
+  container.insertAdjacentHTML('afterbegin', `
+    <div class="select__selected" tabindex="0">
+      <span>${select.selectedOptions[0].innerHTML}</span>
+    </div>
+    <ul class="list-unstyled select__list">
+      ${Array.from(select.children).map(opt => (
+        !opt.hidden ? `<li tabindex="0" class="select__item">${opt.value}</li>` : ''
+      )).join('')}
+    </ul>
+    `
+  );  
+}
+
+function addListeners() {
+  // open/close 
+  document.body.addEventListener('click', toggleList);
+  document.body.addEventListener('keydown', toggleList);
+
+  function toggleList(ev) {
     const target = ev.target.closest('.select__selected');
     if(!target) return;
+
+    if(ev.type === 'keydown' && !(
+      ev.code === 'Enter' ||
+      ev.code === 'Space'
+      )) return;
+
     ev.preventDefault();
 
-    const container = target.closest('.select')
+    const container = target.closest('.select');
     container.classList.toggle('select--active');
+    target.nextElementSibling.children[0].focus();
+  };
+
+  // keyboard navigate
+  document.body.addEventListener('keydown', function(ev) {
+    const target = ev.target.closest('.select__list');
+    if(!target) return;
+
+    if(!(
+      ev.code === 'ArrowUp' ||
+      ev.code === 'ArrowDown' ||
+      ev.code === 'Escape' ||
+      ev.code === 'Tab'
+      )) return;
+
+    ev.preventDefault();
+
+    switch(ev.code) {
+      case 'ArrowDown':
+        const nextSibling = document.activeElement.nextElementSibling;
+        nextSibling && nextSibling.focus();
+        break;
+      case 'ArrowUp':
+        const prevSibling = document.activeElement.previousElementSibling;
+        prevSibling && prevSibling.focus();
+        break;
+      case 'Tab':
+      case 'Escape':
+        const container = ev.target.closest('.select');
+        container.classList.remove('select--active');
+        container.children[0].focus();
+        break;
+    }
   });
-  
-  // list-item click
-  document.body.addEventListener('click', function(ev) {
+
+  // list-item choose
+  document.body.addEventListener('click', chooseItem);
+  document.body.addEventListener('keydown', chooseItem);
+
+  function chooseItem(ev) {
     const target = ev.target.closest('.select__item'); 
     if(!target) return;
+    
+    if(ev.type === 'keydown' && !(ev.code === 'Enter')) return;
+
     ev.preventDefault();
     
     const container = target.closest('.select');
@@ -36,44 +103,24 @@ function customizeSelect() {
   
     // добавляем выбранный номер элемента в настоящий select
     const index = Array.from(list.children).indexOf(target);
-    select.selectedIndex = index;
+    select.selectedIndex = index + 1; // поправка на hidden элемент
 
     container.classList.add('select--chosen');
     container.classList.remove('select--active');
-  });
+    selected.focus();
+  };
 
   //outside click
   document.body.addEventListener('click', function(ev) {
     const target = ev.target.closest('.select'); 
     if(target) return;
 
+    const containers = document.querySelectorAll('.select');
+
     for (let container of containers) {
       container.classList.remove('select--active')
     }
-  })
-} 
-
-function appendCustomSelect(container) {
-  const select = container.querySelector('select');
-  select.classList.add('visually-hidden');
-
-  const label = container.querySelector('label');
-  label.classList.add('visually-hidden');
-
-  // для серого цвета текста дефолтного значения
-  container.classList.add('select--default');
-
-  container.insertAdjacentHTML('afterbegin', `
-    <div class="select__selected">
-      <span>${select.dataset.default}</span>
-    </div>
-    <ul class="list-unstyled select__list">
-      ${Array.from(select.children).map(opt => (
-        `<li class="select__item">${opt.value}</li>`
-      )).join('')}
-    </ul>
-    `
-  );
+  });
 }
 
 export default customizeSelect;

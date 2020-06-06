@@ -142,9 +142,6 @@ gulp.task('webpack', function(callback) {
     options.plugins.push(new ManifestPlugin({
       fileName: 'webpack.json',
     }))
-
-    options.module.rules.push()
-
   }
 
   return combine(

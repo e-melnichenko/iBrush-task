@@ -35,7 +35,9 @@
   }
 
   label:hover,
-  label:hover ~ label {
+  label:hover ~ label,
+  input:focus + label,
+  input:focus ~ label {
     svg {
       stroke: none;
       fill: #ffb400;
@@ -108,10 +110,6 @@
     top: 14px;
     left: 20px;
 
-    
-    // font-family: "Arial", "Helvetica", sans-serif;
-    // font-size: 14px;
-    // line-height: 16px;
     color: #777777;
 
     pointer-events: none;
