@@ -102,8 +102,8 @@
 
   cursor: pointer;
 
-  &:focus,
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: #ededed;
     outline: none;
 
