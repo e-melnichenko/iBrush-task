@@ -11,13 +11,14 @@ function customizeSelect() {
 
 function appendCustomSelect(container) {
   const select = container.querySelector('select');
-  select.setAttribute('style', 'display: none');
+  select.classList.add('visually-hidden');
+  select.setAttribute('tabindex', -1);
 
-  container.insertAdjacentHTML('afterbegin', `
-    <div class="select__selected" tabindex="0">
+  container.insertAdjacentHTML('afterend', `
+    <div class="select__selected" tabindex="0" aria-hidden="true">
       <span>${select.value}</span>
     </div>
-    <ul class="list-unstyled select__list">
+    <ul class="list-unstyled select__list" aria-hidden="true">
       ${Array.from(select.children).map(opt => (
         !opt.hidden ? `<li tabindex="0" class="select__item">${opt.value}</li>` : ''
       )).join('')}
@@ -34,7 +35,9 @@ function addListeners() {
   function toggleList(ev) {
     const target = ev.target.closest('.select__selected');
     if(!target) return;
-    console.log(ev);
+
+    convertCode(ev);  // for ie11 keyCode
+
     if(ev.type === 'keydown' && !(
       ev.code === 'Enter' ||
       ev.code === 'Space'
@@ -52,6 +55,8 @@ function addListeners() {
   document.addEventListener('keydown', function(ev) {
     const target = ev.target.closest('.select__list');
     if(!target) return;
+
+    convertCode(ev);
 
     if(!(
       ev.code === 'ArrowUp' ||
@@ -87,7 +92,8 @@ function addListeners() {
   function chooseItem(ev) {
     const target = ev.target.closest('.select__item'); 
     if(!target) return;
-    
+
+    convertCode(ev);
     if(ev.type === 'keydown' && !(ev.code === 'Enter')) return;
 
     ev.preventDefault();
@@ -104,7 +110,7 @@ function addListeners() {
   
     // добавляем выбранный номер элемента в настоящий select
     const index = Array.from(list.children).indexOf(target);
-    select.selectedIndex = index + 1; // поправка на hidden элемент
+    select.selectedIndex = index + 1; // поправка на placeholder
 
     container.classList.add('select--chosen');
     container.classList.remove('select--active');
@@ -122,6 +128,31 @@ function addListeners() {
       container.classList.remove('select--active')
     }
   });
+}
+
+function convertCode(ev) {
+  if(ev.type !== "keydown" || ev.code) return;
+
+  switch(ev.keyCode) {
+    case 9:
+      ev.code = 'Tab';
+      break
+    case 32:
+      ev.code = 'Space';
+      break
+    case 13:
+      ev.code = 'Enter';
+      break
+    case 38:
+      ev.code = 'ArrowUp';
+      break
+    case 40:
+      ev.code = 'ArrowDown';
+      break
+    case 27:
+      ev.code = 'Escape';
+      break
+  }
 }
 
 export default customizeSelect;
