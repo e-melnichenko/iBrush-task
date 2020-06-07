@@ -7,35 +7,32 @@
   <link rel="preload" href="styles/fonts/SegoeUI-regular.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/style.css">
   <script src="./js/main.js" defer></script>
-  <title>Document</title>
-    <!-- Pixel Glass -->
-<style>
-  HTML {
-    background-repeat: no-repeat;
-    background-position:  50% 0;
-    /* Mobile layout by default */
-    background-image: url( "pixel-glass/preview/mobile.jpg" );
-  }
-  /* Desktop */
-  @media ( min-width: 768px ) {
+  <title>iBrush task</title>
+  <!-- Pixel Glass -->
+  <style>
     HTML {
-      /* Desktop layout */
-      background-image: url( "pixel-glass/preview/desktop.jpg" );
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* Mobile layout by default */
+      background-image: url( "pixel-glass/preview/mobile.jpg" );
     }
-  }
-
-</style> 
-<link href="./pixel-glass/styles.css" rel="stylesheet">
-<script src="./pixel-glass/script.js"></script>
-<!-- // Pixel Glass -->
+    /* Desktop */
+    @media ( min-width: 768px ) {
+      HTML {
+        /* Desktop layout */
+        background-image: url( "pixel-glass/preview/desktop.jpg" );
+      }
+    }
+  </style> 
+  <link href="./pixel-glass/styles.css" rel="stylesheet">
+  <script src="./pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
 </head>
-<!-- asdf -->
 <body>
   <header class="main-header custom-scrollbar">
     <div class="main-header__wrap-top">
       <h1 class="main-header__title">Путь JavaScript</h1>
     </div>
-    
     <div class="main-header__wrap-bottom">
       <p class="main-header__description">Можно выделить три основных направления для прогресса JavaScript <span class="typo">Middleюю</span></p>
       <div class="main-header__wrap-date">
@@ -49,7 +46,6 @@
         </picture>
       </div>
     </div>
-  
   </header>
   <main>
     <section class="server-way">
@@ -133,6 +129,7 @@
             <legend>Добавить комментарий к книге</legend>
             <div class="feedback__wrap">
               <div class="feedback__wrap-input">
+                <!-- placeholder обязателен - по нему двигаем label -->
                 <input type="text" name="name" id="name" placeholder=" ">
                 <label for="name">Имя</label>
               </div>
@@ -207,7 +204,6 @@
               <span class="visually-hidden">Третий пост</span>
             </button>
           </li>
-          
         </ul>
       </div>
     </section>

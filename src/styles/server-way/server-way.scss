@@ -35,9 +35,8 @@
 @media(min-width: $desktop-width) {
   .server-way {
     width: 738px;
-    // margin: 0 auto;
     padding-top: 25px;
-    // margin-bottom: 52px;
+
     border-top: 1px solid #dadbdc;
   }
   
@@ -46,9 +45,10 @@
   }
   
   .server-way blockquote {
+    padding-left: 65px;
+    
     font-size: 18px;
     line-height: 24px;
-    padding-left: 65px;
     
     p {
       margin-bottom: 24px;

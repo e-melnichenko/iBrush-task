@@ -14,7 +14,7 @@ function appendCustomSelect(container) {
   select.classList.add('visually-hidden');
   select.setAttribute('tabindex', -1);
 
-  container.insertAdjacentHTML('afterend', `
+  container.insertAdjacentHTML('afterbegin', `
     <div class="select__selected" tabindex="0" aria-hidden="true">
       <span>${select.value}</span>
     </div>

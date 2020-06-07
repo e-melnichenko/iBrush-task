@@ -20,22 +20,14 @@
 }
 
 .container {
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 @media(min-width: $desktop-width) {
   .container {
     width: 738px;
-    margin: 0 auto;
     padding: 0 15px;
-  }
-  .modal-outter-wrap {
-    align-items: center;
-    justify-content: center;
-    // минимальная ширина экрана, при которой модальное окно перестает уменьшаться и центроваться. 
-    // Также появляется горизонтальная прокрутка. Модальные окна большего размера будут уменьшатся.
-    // Удалить, если такое поведение не нужно. Если не нужно поддерживать ie, то использовать fit-content
-    // min-width: 860px; 
   }
 }
 

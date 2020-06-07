@@ -12,15 +12,17 @@
 
 .commercial p {
   margin-bottom: 17px;
+
   @include segoeReg(14px, 18px);
 }
 
 .commercial a {
-  color: $color-main;
-
-  text-decoration: none;
-  border-bottom: 1px solid $color-main;
   padding-bottom: 2px;
+  
+  color: $color-main;
+  text-decoration: none;
+  
+  border-bottom: 1px solid $color-main;
 }
 
 @media(min-width: $desktop-width) {
