@@ -129,7 +129,7 @@ gulp.task('webpack', function(callback) {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env'],
+              babelrc: true
             }
           }
         }
