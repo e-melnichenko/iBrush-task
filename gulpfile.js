@@ -58,7 +58,6 @@ gulp.task('styles', function() {
       $.postcss([autoprefixer(), cssnano()]),
       $.rev()
     )),
-    $.postcss([autoprefixer()]),
     gulp.dest('public/styles'),
     $.if(!isDevelopment, combine(
       $.rev.manifest('styles.json'),
@@ -204,11 +203,6 @@ gulp.task('sprite', function() {
   .pipe(gulp.dest("src/assets/img"));
 });
 
-gulp.task('copy:js', function() {
-  return gulp.src(['src/js/**/*.js', '!src/js/main.js'])
-    .pipe(gulp.dest('public/js'))
-});
-
 gulp.task('copy:fonts', function() {
   return gulp.src('src/styles/sass-common/**/*.{woff,woff2}')
     .pipe(gulp.dest('public/styles'))
@@ -220,7 +214,7 @@ gulp.task('pixel-glass', function() {
 });
 
 gulp.task('build', gulp.series(
-  gulp.parallel(gulp.series('styles:images', 'styles'), 'webpack', 'assets:images', 'copy:js', 'copy:fonts'),
+  gulp.parallel(gulp.series('styles:images', 'styles'), 'webpack', 'assets:images', 'copy:fonts'),
   'html'
 ));
 
